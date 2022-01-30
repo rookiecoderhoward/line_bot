@@ -42,8 +42,8 @@ def handle_message(event):
     
     if '圖片' in msg:
         image_message = ImageSendMessage(
-            original_content_url='https://i.imgur.com/ErRXu3m.jpg https://i.imgur.com/3d3kwle.jpg',
-            preview_image_url='https://i.imgur.com/ErRXu3m.jpg https://i.imgur.com/3d3kwle.jpg'
+            original_content_url='https://i.imgur.com/ErRXu3m.jpg',
+            preview_image_url='https://i.imgur.com/ErRXu3m.jpg'
         )
     
     elif '色圖' in msg:
