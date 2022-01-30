@@ -42,10 +42,16 @@ def handle_message(event):
     
     if '圖片' in msg:
         image_message = ImageSendMessage(
-            original_content_url='https://i.imgur.com/ErRXu3m.jpg' + 'https://i.imgur.com/GSJ0tw2.jpg'
-            preview_image_url='https://i.imgur.com/ErRXu3m.jpg' + 'https://i.imgur.com/GSJ0tw2.jpg'
+            original_content_url='https://i.imgur.com/ErRXu3m.jpg https://i.imgur.com/TyYoo6x.png',
+            preview_image_url='https://i.imgur.com/ErRXu3m.jpg https://i.imgur.com/TyYoo6x.png'
         )
     
+    elif '色圖' in msg:
+        image_message = ImageSendMessage(
+            original_content_url='https://i.imgur.com/GSJ0tw2.jpg',
+            preview_image_url='https://i.imgur.com/GSJ0tw2.jpg'
+        )
+
         line_bot_api.reply_message(
             event.reply_token,
             image_message)
