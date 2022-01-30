@@ -46,7 +46,12 @@ def handle_message(event):
             preview_image_url='https://i.imgur.com/ErRXu3m.jpg'
         )
     
-    elif '色圖' in msg:
+        line_bot_api.reply_message(
+            event.reply_token,
+            image_message)
+        return
+
+    if '色圖' in msg:
         image_message = ImageSendMessage(
             original_content_url='https://i.imgur.com/GSJ0tw2.jpg',
             preview_image_url='https://i.imgur.com/GSJ0tw2.jpg'
@@ -71,7 +76,7 @@ def handle_message(event):
 
     if msg in ['我愛你', '我愛妳']:
         s = '啊.啊..不可以色色啦!老公 >.< ||  我也愛你~~love you too'
-    elif msg == '親一個':
+    elif '親' in msg:
         s = '討厭啦~~ 我同意 但是要把我抱起來親喔!!皓宇寶貝'
     elif msg == '愛妳寶貝':
         s = '嘴巴真甜 真是的~~拿你沒辦法(害羞)/// 今晚同意你做...(色色' 
